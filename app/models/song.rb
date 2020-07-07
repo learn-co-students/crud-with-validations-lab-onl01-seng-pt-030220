@@ -20,7 +20,7 @@ class Song < ApplicationRecord
   validates :title, uniqueness: { case_sensitive: false, scope: [:release_year, :artist_name], message: "cannot be repeated by the same artist in the same year" }
   validates :released, inclusion: { in: [true, false]}
   validates :release_year, numericality: { only_integer: true, less_than_or_equal_to: Time.now.year  }, if: :released?
-
+  validates :artist_name, presence: true
 
   ############ learn's solution ############
   # validates :title, presence: true
