@@ -3,7 +3,6 @@
   <thead>
     <tr>
       <th>Song Title</th>
-      <th>Released</th>
       <th>Release Year</th>
       <th>Genre</th>
       <th>Artist Name</th>
@@ -13,11 +12,15 @@
   <tbody>
     <% @songs.each do |song| %>
       <tr>
-        <td><%= link_to song.title, song_path(song) %></td>
-        <td><%= song.released %></td>
+        <td><%= song.title %></td>
         <td><%= song.release_year %></td>
         <td><%= song.genre %></td>
         <td><%= song.artist_name %></td>
+        <td>
+        <%= link_to 'View', song %> |
+        <%= link_to 'Edit', edit_song_path(song) %> |
+        <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
