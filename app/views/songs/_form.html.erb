@@ -1,8 +1,8 @@
 <%= form_for @song do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
-  <%= f.label :released %> - Must be true or false!
-  <%= f.text_field :released %><br>
+  <%= f.label :released %>
+  <%= f.check_box :released %><br>
   <%= f.label :release_year %>
   <%= f.number_field :release_year %><br>
   <%= f.label :artist_name %>
