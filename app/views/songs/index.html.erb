@@ -1,7 +1,26 @@
 <h1>Check out all these songs!</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Song Title</th>
+      <th>Released</th>
+      <th>Release Year</th>
+      <th>Genre</th>
+      <th>Artist Name</th>
+    </tr>
+  </thead>
 
-<% @songs.each do |song| %>
-  <%= link_to song.title, song_path(song) %><br>
-<% end %>
-
-<%= link_to "Create a new song", new_song_path %>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.title, song_path(song) %></td>
+        <td><%= song.released %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        <td><%= song.artist_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  
+</table>
+<br><%= link_to "Create a new song", new_song_path %>
