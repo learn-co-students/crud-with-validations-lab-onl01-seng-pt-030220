@@ -15,6 +15,13 @@ class Song < ApplicationRecord
   #   end
   # end
 
+  ######## refactored solution #############
+  validates :title, presence: true
+  validates :title, uniqueness: { scope: [:release_year, :artist_name], message: "cannot be repeated by the same artist in the same year" }
+  validates :released, inclusion: { in: [true, false]}
+  validates :release_year, numericality: { only_integer: true, less_than_or_equal_to: Time.now.year  }, if: :released?
+
+
   ############ learn's solution ############
   # validates :title, presence: true
   # validates :title, uniqueness: {
@@ -36,11 +43,11 @@ class Song < ApplicationRecord
   # end
 
   ########## micah's solution ##########
-  validates :title, presence: true
-  validates :title, uniqueness: { scope: :release_year} 
-  validates :released, inclusion: {in: [true, false]}
-  validates :artist_name, presence: true
-  validates :release_year, presence: true, numericality: { only_integer: true, less_than_or_equal_to: Time.now.year}, if: ->{ released }
+  # validates :title, presence: true
+  # validates :title, uniqueness: { scope: :release_year} 
+  # validates :released, inclusion: {in: [true, false]}
+  # validates :artist_name, presence: true
+  # validates :release_year, presence: true, numericality: { only_integer: true, less_than_or_equal_to: Time.now.year}, if: ->{ released }
   
   
 end
