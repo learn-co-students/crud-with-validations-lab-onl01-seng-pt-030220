@@ -8,4 +8,4 @@ by <strong><%= @song.artist_name %></strong>
 
 <%= link_to "Edit this Song", edit_song_path(@song) %><br><br>
 <%= link_to "Delete this Song", @song, method: "delete", data: { confirm: 'Are you sure you want to delete this song?'} %><br><br>
-<%= link_to "Back", songs_path %>
+<%= link_to "All Songs", songs_path %>
