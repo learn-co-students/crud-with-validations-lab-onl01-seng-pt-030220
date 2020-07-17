@@ -1,0 +1,5 @@
+Song.create(title: "SongOne", artist_name: "FirstOne", genre: "Whatevs", released: true, release_year: 1997)
+Song.create(title: "SongTwo", artist_name: "SecondOne", genre: "Whatevs", released: true, release_year: 1998)
+Song.create(title: "SongThree", artist_name: "ThirdOne", genre: "Whatevs", released: true, release_year: 1999)
+Song.create(title: "SongFour", artist_name: "FourthOne", genre: "Whatevs", released: true, release_year: 2000)
+Song.create(title: "SongFive", artist_name: "FifthOne", genre: "Whatevs", released: true, release_year: 1990)
